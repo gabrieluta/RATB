@@ -23,30 +23,30 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="623" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="785" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="0" pref="623" max="32767" attributes="0"/>
+              <Component id="jPanel2" alignment="0" pref="785" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-              <Component id="jPanel3" alignment="0" pref="623" max="32767" attributes="0"/>
+              <Component id="jPanel3" alignment="0" pref="785" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
-              <Component id="jPanel4" alignment="0" pref="623" max="32767" attributes="0"/>
+              <Component id="jPanel4" alignment="0" pref="785" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
-              <Component id="jPanel5" alignment="0" pref="623" max="32767" attributes="0"/>
+              <Component id="jPanel5" alignment="0" pref="785" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="5" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanel6" pref="603" max="32767" attributes="0"/>
+                  <Component id="jPanel6" pref="765" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="6" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel7" max="32767" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -54,36 +54,36 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" pref="592" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="1" pref="669" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="1" pref="592" max="32767" attributes="0"/>
+              <Component id="jPanel2" alignment="1" pref="669" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="jPanel3" pref="581" max="32767" attributes="0"/>
+                  <Component id="jPanel3" pref="658" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="jPanel4" alignment="1" pref="185" max="32767" attributes="0"/>
+                  <Component id="jPanel4" alignment="1" pref="262" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="407" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
-              <Component id="jPanel5" alignment="1" pref="592" max="32767" attributes="0"/>
+              <Component id="jPanel5" alignment="1" pref="669" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="5" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
-                  <Component id="jPanel6" pref="184" max="32767" attributes="0"/>
+                  <Component id="jPanel6" pref="261" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="6" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
-                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel7" max="32767" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -101,18 +101,54 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
-                  <Component id="jLabel13" min="-2" pref="481" max="-2" attributes="0"/>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jSpinner10" min="-2" pref="155" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jSpinner11" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel13" min="-2" pref="501" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="510" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel13" min="-2" pref="346" max="-2" attributes="0"/>
-                  <EmptySpace pref="101" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinner10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinner11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="68" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -126,6 +162,249 @@
             <Property name="text" type="java.lang.String" value="jLabel13"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="jButton9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Calculeaza ruta"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinner10">
+          <Properties>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel type="list">
+                <ListItem value="Selectati statie"/>
+                <ListItem value="1 Mai"/>
+                <ListItem value="Academia Militara"/>
+                <ListItem value="Aeroport Baneasa"/>
+                <ListItem value="Aeroport Henri Coanda- Otopeni"/>
+                <ListItem value="Alaska"/>
+                <ListItem value="Alexandru Moldoveanu"/>
+                <ListItem value="Andronache"/>
+                <ListItem value="Anghel Saligny"/>
+                <ListItem value="Aparatorii Patriei"/>
+                <ListItem value="Aurel Vlaicu"/>
+                <ListItem value="Autogara Rahova"/>
+                <ListItem value="Aviatorilor"/>
+                <ListItem value="Bacovia"/>
+                <ListItem value="Baneasa Institut"/>
+                <ListItem value="Baneasa Meteo"/>
+                <ListItem value="Barza"/>
+                <ListItem value="Basarab"/>
+                <ListItem value="Berceni"/>
+                <ListItem value="Brancusi"/>
+                <ListItem value="Bucegi"/>
+                <ListItem value="Cartier Baneasa"/>
+                <ListItem value="Casa Presei Libere"/>
+                <ListItem value="Colentina"/>
+                <ListItem value="Constantin Brancoveanu"/>
+                <ListItem value="Costin Georgian"/>
+                <ListItem value="Crangasi"/>
+                <ListItem value="Dacia"/>
+                <ListItem value="Delfinului"/>
+                <ListItem value="Depoul RATB"/>
+                <ListItem value="Depoul Voluntari"/>
+                <ListItem value="Dimitrie Leonida"/>
+                <ListItem value="Doamna Ghica"/>
+                <ListItem value="Dristor"/>
+                <ListItem value="Drumul Taberei"/>
+                <ListItem value="Eroii Revolutiei"/>
+                <ListItem value="Eroilor"/>
+                <ListItem value="Express"/>
+                <ListItem value="Favorit"/>
+                <ListItem value="Gara Baneasa"/>
+                <ListItem value="Gara Progresul"/>
+                <ListItem value="Gara de nord"/>
+                <ListItem value="Gorjului"/>
+                <ListItem value="Gradistea"/>
+                <ListItem value="Granitul"/>
+                <ListItem value="Grivita"/>
+                <ListItem value="Grozavesti"/>
+                <ListItem value="Hasdeu"/>
+                <ListItem value="Independentei 1877"/>
+                <ListItem value="Izvor"/>
+                <ListItem value="Lac Straulesti"/>
+                <ListItem value="Laminorului"/>
+                <ListItem value="Luica"/>
+                <ListItem value="Lujerului"/>
+                <ListItem value="Mihai Bravu"/>
+                <ListItem value="Morarilor"/>
+                <ListItem value="Nicolae Grigorescu"/>
+                <ListItem value="Nicolae Teclu"/>
+                <ListItem value="Obor"/>
+                <ListItem value="Pacii"/>
+                <ListItem value="Padina"/>
+                <ListItem value="Pajura"/>
+                <ListItem value="Pantelimon"/>
+                <ListItem value="Parc Bazilescu"/>
+                <ListItem value="Parc Drumul Taberei"/>
+                <ListItem value="Penitenciar Rahova"/>
+                <ListItem value="Petrache Poenaru"/>
+                <ListItem value="Piata Iancului"/>
+                <ListItem value="Piata Muncii"/>
+                <ListItem value="Piata Progresul"/>
+                <ListItem value="Piata Rahova"/>
+                <ListItem value="Piata Romana"/>
+                <ListItem value="Piata Sudului"/>
+                <ListItem value="Piata Unirii"/>
+                <ListItem value="Piata Victoriei"/>
+                <ListItem value="Pipera"/>
+                <ListItem value="Politehnica"/>
+                <ListItem value="Preciziei"/>
+                <ListItem value="Privighetorilor"/>
+                <ListItem value="Raul Doamnei"/>
+                <ListItem value="Republica"/>
+                <ListItem value="Romancierilor"/>
+                <ListItem value="Sebastian"/>
+                <ListItem value="Spital Fundeni"/>
+                <ListItem value="Sportului"/>
+                <ListItem value="Stadionul National"/>
+                <ListItem value="Stefan cel Mare"/>
+                <ListItem value="Timpuri Noi"/>
+                <ListItem value="Tineretului"/>
+                <ListItem value="Titan"/>
+                <ListItem value="Toporan"/>
+                <ListItem value="Universitate"/>
+                <ListItem value="Valea Ialomitei"/>
+                <ListItem value="Vlahuta"/>
+                <ListItem value="Voluntari"/>
+              </SpinnerModel>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinner11">
+          <Properties>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel type="list">
+                <ListItem value="Selectati statie"/>
+                <ListItem value="1 Mai"/>
+                <ListItem value="Academia Militara"/>
+                <ListItem value="Aeroport Baneasa"/>
+                <ListItem value="Aeroport Henri Coanda- Otopeni"/>
+                <ListItem value="Alaska"/>
+                <ListItem value="Alexandru Moldoveanu"/>
+                <ListItem value="Andronache"/>
+                <ListItem value="Anghel Saligny"/>
+                <ListItem value="Aparatorii Patriei"/>
+                <ListItem value="Aurel Vlaicu"/>
+                <ListItem value="Autogara Rahova"/>
+                <ListItem value="Aviatorilor"/>
+                <ListItem value="Bacovia"/>
+                <ListItem value="Baneasa Institut"/>
+                <ListItem value="Baneasa Meteo"/>
+                <ListItem value="Barza"/>
+                <ListItem value="Basarab"/>
+                <ListItem value="Berceni"/>
+                <ListItem value="Brancusi"/>
+                <ListItem value="Bucegi"/>
+                <ListItem value="Cartier Baneasa"/>
+                <ListItem value="Casa Presei Libere"/>
+                <ListItem value="Colentina"/>
+                <ListItem value="Constantin Brancoveanu"/>
+                <ListItem value="Costin Georgian"/>
+                <ListItem value="Crangasi"/>
+                <ListItem value="Dacia"/>
+                <ListItem value="Delfinului"/>
+                <ListItem value="Depoul RATB"/>
+                <ListItem value="Depoul Voluntari"/>
+                <ListItem value="Dimitrie Leonida"/>
+                <ListItem value="Doamna Ghica"/>
+                <ListItem value="Dristor"/>
+                <ListItem value="Drumul Taberei"/>
+                <ListItem value="Eroii Revolutiei"/>
+                <ListItem value="Eroilor"/>
+                <ListItem value="Express"/>
+                <ListItem value="Favorit"/>
+                <ListItem value="Gara Baneasa"/>
+                <ListItem value="Gara Progresul"/>
+                <ListItem value="Gara de nord"/>
+                <ListItem value="Gorjului"/>
+                <ListItem value="Gradistea"/>
+                <ListItem value="Granitul"/>
+                <ListItem value="Grivita"/>
+                <ListItem value="Grozavesti"/>
+                <ListItem value="Hasdeu"/>
+                <ListItem value="Independentei 1877"/>
+                <ListItem value="Izvor"/>
+                <ListItem value="Lac Straulesti"/>
+                <ListItem value="Laminorului"/>
+                <ListItem value="Luica"/>
+                <ListItem value="Lujerului"/>
+                <ListItem value="Mihai Bravu"/>
+                <ListItem value="Morarilor"/>
+                <ListItem value="Nicolae Grigorescu"/>
+                <ListItem value="Nicolae Teclu"/>
+                <ListItem value="Obor"/>
+                <ListItem value="Pacii"/>
+                <ListItem value="Padina"/>
+                <ListItem value="Pajura"/>
+                <ListItem value="Pantelimon"/>
+                <ListItem value="Parc Bazilescu"/>
+                <ListItem value="Parc Drumul Taberei"/>
+                <ListItem value="Penitenciar Rahova"/>
+                <ListItem value="Petrache Poenaru"/>
+                <ListItem value="Piata Iancului"/>
+                <ListItem value="Piata Muncii"/>
+                <ListItem value="Piata Progresul"/>
+                <ListItem value="Piata Rahova"/>
+                <ListItem value="Piata Romana"/>
+                <ListItem value="Piata Sudului"/>
+                <ListItem value="Piata Unirii"/>
+                <ListItem value="Piata Victoriei"/>
+                <ListItem value="Pipera"/>
+                <ListItem value="Politehnica"/>
+                <ListItem value="Preciziei"/>
+                <ListItem value="Privighetorilor"/>
+                <ListItem value="Raul Doamnei"/>
+                <ListItem value="Republica"/>
+                <ListItem value="Romancierilor"/>
+                <ListItem value="Sebastian"/>
+                <ListItem value="Spital Fundeni"/>
+                <ListItem value="Sportului"/>
+                <ListItem value="Stadionul National"/>
+                <ListItem value="Stefan cel Mare"/>
+                <ListItem value="Timpuri Noi"/>
+                <ListItem value="Tineretului"/>
+                <ListItem value="Titan"/>
+                <ListItem value="Toporan"/>
+                <ListItem value="Universitate"/>
+                <ListItem value="Valea Ialomitei"/>
+                <ListItem value="Vlahuta"/>
+                <ListItem value="Voluntari"/>
+              </SpinnerModel>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="De la :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pana la: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextPane" name="jTextPane1">
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel6">
@@ -197,7 +476,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="138" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jButton6" min="-2" max="-2" attributes="0"/>
@@ -205,7 +484,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" pref="138" max="32767" attributes="0"/>
                           <Component id="jSpinner7" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -218,28 +497,28 @@
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="138" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="59" max="32767" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jSpinner6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jSpinner7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="55" max="32767" attributes="0"/>
                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -292,7 +571,7 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="263" max="32767" attributes="0"/>
+                          <EmptySpace pref="182" max="32767" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -300,7 +579,7 @@
                           <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="263" max="32767" attributes="0"/>
+                  <EmptySpace pref="182" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -309,9 +588,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <EmptySpace pref="147" max="32767" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                  <EmptySpace pref="151" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -536,30 +815,30 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="312" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="285" max="32767" attributes="0"/>
+                  <EmptySpace pref="123" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="231" max="32767" attributes="0"/>
+                  <EmptySpace pref="123" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -606,7 +885,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="254" max="32767" attributes="0"/>
+                  <EmptySpace pref="186" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -617,22 +896,22 @@
                       </Group>
                       <Component id="jLabel12" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="255" max="32767" attributes="0"/>
+                  <EmptySpace pref="186" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="101" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
                   <Component id="jLabel12" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" pref="108" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" pref="54" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
                   <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" pref="108" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" pref="54" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="101" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

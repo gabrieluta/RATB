@@ -101,6 +101,8 @@ public class BazaDeDate implements AutoCloseable {
         ResultSet rs = statement.executeQuery();
         rs.next();
         int cod = rs.getInt("cod_card");
+        statement.close();
+        rs.close();
 
         if (codCard > 0 && cod >= codCard) {
             return true;
@@ -117,6 +119,7 @@ public class BazaDeDate implements AutoCloseable {
         statement.setInt(2, codClientCurent);
 
         statement.executeUpdate();
+        statement.close();
 
     }
 
@@ -166,7 +169,7 @@ public class BazaDeDate implements AutoCloseable {
                 return message;
             }
         }
-
+        rs.close();
         statement.close();
         return "cardul nu a fost validat";
     }
@@ -227,10 +230,12 @@ public class BazaDeDate implements AutoCloseable {
                 return "exista abonamentul";
             } else {
                 statement.close();
+                rs.close();
                 return "abonament expirat";
             }
         }
         statement.close();
+        rs.close();
         return "niciun abonament pentru datele scrise";
 
     }
@@ -256,6 +261,7 @@ public class BazaDeDate implements AutoCloseable {
         int cod = rs.getInt(1);
         c.setCodCard(cod);
         statement.close();
+        rs.close();
 
 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -291,7 +297,8 @@ public class BazaDeDate implements AutoCloseable {
                 ok = 1;
             }
             System.out.println(ok);
-
+            statement.close();
+            rs.close();
             if (ok == 1) {
                 return false;
             } else {
@@ -342,6 +349,28 @@ public class BazaDeDate implements AutoCloseable {
         statement.setInt(9, year);
         statement.executeUpdate();
         statement.close();
+
+    }
+
+    String actualizareBani(int codClientCurent) {
+        String q = "SELECT bani from clienti where cod_card= ?";
+        PreparedStatement statement;
+        try {
+            statement = connection.prepareStatement(q);
+            statement.setInt(1, codClientCurent);
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            double bani = rs.getDouble(1);
+            System.out.println("BANI:" + bani);
+
+            statement.close();
+            rs.close();
+            return Double.toString(bani);
+
+        } catch (Exception e) {
+
+        }
+        return "0";
 
     }
 

@@ -6,31 +6,144 @@
 package Mypackage;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class Client extends javax.swing.JFrame {
-    
+
     private static Socket s;
     private static BufferedReader in;
     private static PrintWriter out;
+    ArrayList<String> denumiri ;
     int CodCard;
-    
+
     public Client() {
+       denumiri  = new ArrayList<>();
+       denumiri.add("1 Mai");
+            denumiri.add("Academia Militara");
+            denumiri.add("Aeroport Baneasa");
+            denumiri.add("Aeroport Henri Coanda- Otopeni");
+            denumiri.add("Alaska");
+            denumiri.add("Alexandru Moldoveanu");
+            denumiri.add("Andronache");
+            denumiri.add("Anghel Saligny");
+            denumiri.add("Aparatorii Patriei");
+            denumiri.add("Aurel Vlaicu");
+            denumiri.add("Autogara Rahova");
+            denumiri.add("Aviatorilor");
+            denumiri.add("Bacovia");
+            denumiri.add("Baneasa Institut");
+            denumiri.add("Baneasa Meteo");
+            denumiri.add("Barza");
+            denumiri.add("Basarab");
+            denumiri.add("Berceni");
+            denumiri.add("Brancusi");
+            denumiri.add("Bucegi");
+            denumiri.add("Cartier Baneasa");
+            denumiri.add("Casa Presei Libere");
+            denumiri.add("Colentina");
+            denumiri.add("Constantin Brancoveanu");
+            denumiri.add("Costin Georgian");
+            denumiri.add("Crangasi");
+            denumiri.add("Dacia");
+            denumiri.add("Delfinului");
+            denumiri.add("Depoul RATB");
+            denumiri.add("Depoul Voluntari");
+            denumiri.add("Dimitrie Leonida");
+            denumiri.add("Doamna Ghica");
+            denumiri.add("Dristor");
+            denumiri.add("Drumul Taberei");
+            denumiri.add("Eroii Revolutiei");
+            denumiri.add("Eroilor");
+            denumiri.add("Express");
+            denumiri.add("Favorit");
+            denumiri.add("Gara Baneasa");
+            denumiri.add("Gara Progresul");
+            denumiri.add("Gara de nord");
+            denumiri.add("Gorjului");
+            denumiri.add("Gradistea");
+            denumiri.add("Granitul");
+            denumiri.add("Grivita");
+            denumiri.add("Grozavesti");
+            denumiri.add("Hasdeu");
+            denumiri.add("Independentei 1877");
+            denumiri.add("Izvor");
+            denumiri.add("Lac Straulesti");
+            denumiri.add("Laminorului");
+            denumiri.add("Luica");
+            denumiri.add("Lujerului");
+            denumiri.add("Mihai Bravu");
+            denumiri.add("Morarilor");
+            denumiri.add("Nicolae Grigorescu");
+            denumiri.add("Nicolae Teclu");
+            denumiri.add("Obor");
+            denumiri.add("Pacii");
+            denumiri.add("Padina");
+            denumiri.add("Pajura");
+            denumiri.add("Pantelimon");
+            denumiri.add("Parc Bazilescu");
+            denumiri.add("Parc Drumul Taberei");
+            denumiri.add("Penitenciar Rahova");
+            denumiri.add("Petrache Poenaru");
+            denumiri.add("Piata Iancului");
+            denumiri.add("Piata Muncii");
+            denumiri.add("Piata Progresul");
+            denumiri.add("Piata Rahova");
+            denumiri.add("Piata Romana");
+            denumiri.add("Piata Sudului");
+            denumiri.add("Piata Unirii");
+            denumiri.add("Piata Victoriei");
+            denumiri.add("Pipera");
+            denumiri.add("Politehnica");
+            denumiri.add("Preciziei");
+            denumiri.add("Privighetorilor");
+            denumiri.add("Raul Doamnei");
+            denumiri.add("Republica");
+            denumiri.add("Romancierilor");
+            denumiri.add("Sebastian");
+            denumiri.add("Spital Fundeni");
+            denumiri.add("Sportului");
+            denumiri.add("Stadionul National");
+            denumiri.add("Stefan cel Mare");
+            denumiri.add("Timpuri Noi");
+            denumiri.add("Tineretului");
+            denumiri.add("Titan");
+            denumiri.add("Toporan");
+            denumiri.add("Universitate");
+            denumiri.add("Valea Ialomitei");
+            denumiri.add("Vlahuta");
+            denumiri.add("Voluntari");
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel7 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jSpinner10 = new javax.swing.JSpinner();
+        jSpinner11 = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -76,21 +189,74 @@ public class Client extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Madaluna\\Desktop\\metrou_bucuresti_2020.png")); // NOI18N
         jLabel13.setText("jLabel13");
 
+        jButton9.setText("Calculeaza ruta");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jSpinner10.setModel(new javax.swing.SpinnerListModel(new String[] {"Selectati statie", "1 Mai", "Academia Militara", "Aeroport Baneasa", "Aeroport Henri Coanda- Otopeni", "Alaska", "Alexandru Moldoveanu", "Andronache", "Anghel Saligny", "Aparatorii Patriei", "Aurel Vlaicu", "Autogara Rahova", "Aviatorilor", "Bacovia", "Baneasa Institut", "Baneasa Meteo", "Barza", "Basarab", "Berceni", "Brancusi", "Bucegi", "Cartier Baneasa", "Casa Presei Libere", "Colentina", "Constantin Brancoveanu", "Costin Georgian", "Crangasi", "Dacia", "Delfinului", "Depoul RATB", "Depoul Voluntari", "Dimitrie Leonida", "Doamna Ghica", "Dristor", "Drumul Taberei", "Eroii Revolutiei", "Eroilor", "Express", "Favorit", "Gara Baneasa", "Gara Progresul", "Gara de nord", "Gorjului", "Gradistea", "Granitul", "Grivita", "Grozavesti", "Hasdeu", "Independentei 1877", "Izvor", "Lac Straulesti", "Laminorului", "Luica", "Lujerului", "Mihai Bravu", "Morarilor", "Nicolae Grigorescu", "Nicolae Teclu", "Obor", "Pacii", "Padina", "Pajura", "Pantelimon", "Parc Bazilescu", "Parc Drumul Taberei", "Penitenciar Rahova", "Petrache Poenaru", "Piata Iancului", "Piata Muncii", "Piata Progresul", "Piata Rahova", "Piata Romana", "Piata Sudului", "Piata Unirii", "Piata Victoriei", "Pipera", "Politehnica", "Preciziei", "Privighetorilor", "Raul Doamnei", "Republica", "Romancierilor", "Sebastian", "Spital Fundeni", "Sportului", "Stadionul National", "Stefan cel Mare", "Timpuri Noi", "Tineretului", "Titan", "Toporan", "Universitate", "Valea Ialomitei", "Vlahuta", "Voluntari"}));
+
+        jSpinner11.setModel(new javax.swing.SpinnerListModel(new String[] {"Selectati statie", "1 Mai", "Academia Militara", "Aeroport Baneasa", "Aeroport Henri Coanda- Otopeni", "Alaska", "Alexandru Moldoveanu", "Andronache", "Anghel Saligny", "Aparatorii Patriei", "Aurel Vlaicu", "Autogara Rahova", "Aviatorilor", "Bacovia", "Baneasa Institut", "Baneasa Meteo", "Barza", "Basarab", "Berceni", "Brancusi", "Bucegi", "Cartier Baneasa", "Casa Presei Libere", "Colentina", "Constantin Brancoveanu", "Costin Georgian", "Crangasi", "Dacia", "Delfinului", "Depoul RATB", "Depoul Voluntari", "Dimitrie Leonida", "Doamna Ghica", "Dristor", "Drumul Taberei", "Eroii Revolutiei", "Eroilor", "Express", "Favorit", "Gara Baneasa", "Gara Progresul", "Gara de nord", "Gorjului", "Gradistea", "Granitul", "Grivita", "Grozavesti", "Hasdeu", "Independentei 1877", "Izvor", "Lac Straulesti", "Laminorului", "Luica", "Lujerului", "Mihai Bravu", "Morarilor", "Nicolae Grigorescu", "Nicolae Teclu", "Obor", "Pacii", "Padina", "Pajura", "Pantelimon", "Parc Bazilescu", "Parc Drumul Taberei", "Penitenciar Rahova", "Petrache Poenaru", "Piata Iancului", "Piata Muncii", "Piata Progresul", "Piata Rahova", "Piata Romana", "Piata Sudului", "Piata Unirii", "Piata Victoriei", "Pipera", "Politehnica", "Preciziei", "Privighetorilor", "Raul Doamnei", "Republica", "Romancierilor", "Sebastian", "Spital Fundeni", "Sportului", "Stadionul National", "Stefan cel Mare", "Timpuri Noi", "Tineretului", "Titan", "Toporan", "Universitate", "Valea Ialomitei", "Vlahuta", "Voluntari"}));
+
+        jLabel15.setText("De la :");
+
+        jLabel16.setText("Pana la: ");
+
+        jButton10.setText("Back");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(jTextPane1);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jButton10)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton9))
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 39, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel4.setVisible(false);
@@ -152,14 +318,14 @@ public class Client extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(138, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jButton6)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 138, Short.MAX_VALUE)
                         .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel10)
@@ -168,24 +334,24 @@ public class Client extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jPanel4.setVisible(false);
@@ -207,21 +373,21 @@ public class Client extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(263, Short.MAX_VALUE)
+                        .addContainerGap(182, Short.MAX_VALUE)
                         .addComponent(jLabel7))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton5)))
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         jPanel3.setVisible(false);
@@ -360,26 +526,26 @@ public class Client extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(157, 157, 157)
                 .addComponent(jButton8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(312, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(285, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addGap(30, 30, 30)
                 .addComponent(jButton8)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         jPanel1.setPreferredSize(new java.awt.Dimension(505, 368));
@@ -406,7 +572,7 @@ public class Client extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jButton1)
@@ -414,70 +580,70 @@ public class Client extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 108, Short.MAX_VALUE)
+                .addGap(18, 54, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 108, Short.MAX_VALUE)
+                .addGap(18, 54, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(127, 127, 127)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                     .addGap(407, 407, 407)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(204, 204, 204)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                     .addGap(204, 204, 204)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(195, 195, 195)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -501,7 +667,7 @@ public class Client extends javax.swing.JFrame {
         out.flush();
         String mesaj = "verificare";
         out.println(mesaj);
-        
+
         jPanel1.setVisible(false);
         jPanel4.setVisible(false);
         jPanel3.setVisible(false);
@@ -534,7 +700,7 @@ public class Client extends javax.swing.JFrame {
         System.out.println("minut " + minut);
         out.println(minut);
         String nrPersoane = jSpinner9.getValue().toString();
-        
+
         out.println(nrPersoane);
         System.out.println("pers " + nrPersoane);
         try {
@@ -560,17 +726,17 @@ public class Client extends javax.swing.JFrame {
                 jSpinner4.setValue(7);
                 jSpinner5.setValue(0);
                 jLabel2.setVisible(false);
-                
+
             }
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
+
         jPanel2.setVisible(false);
         jPanel3.setVisible(false);
         jPanel4.setVisible(false);
@@ -595,13 +761,13 @@ public class Client extends javax.swing.JFrame {
         jPanel6.setVisible(true);
         jSpinner6.setValue(0);
         jSpinner7.setValue(0);
-        
+
         try {
             String message = in.readLine();
             if (!message.equals("cardul nu a fost validat")) {
                 System.out.println(message);
                 jLabel14.setText(message);
-                
+
             } else {
                 jLabel14.setText("cardul nu a fost validat");
             }
@@ -624,20 +790,20 @@ public class Client extends javax.swing.JFrame {
                 String message = in.readLine();
                 if (message.equals("exista")) {
                     jPanel1.setVisible(false);
-                    
+
                     jPanel3.setVisible(false);
                     jPanel4.setVisible(false);
                     jPanel5.setVisible(false);
                     jPanel6.setVisible(false);
                     jPanel2.setVisible(true);
                     jTextField1.setText("");
-                    
+
                     jLabel12.setVisible(false);
-                    
+
                 } else {
                     jLabel12.setText("id inexistent");
                     jLabel12.setVisible(true);
-                    
+
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
@@ -645,7 +811,7 @@ public class Client extends javax.swing.JFrame {
         } else {
             jLabel12.setText("date incorecte");
             jLabel12.setVisible(true);
-            
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -654,7 +820,7 @@ public class Client extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        
+
         jPanel2.setVisible(false);
         jPanel3.setVisible(false);
         jPanel4.setVisible(false);
@@ -664,28 +830,109 @@ public class Client extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-     jPanel1.setVisible(false);
+        jPanel1.setVisible(false);
         jPanel3.setVisible(false);
         jPanel4.setVisible(false);
         jPanel5.setVisible(false);
         jPanel6.setVisible(false);
         jPanel2.setVisible(false);
-      
-  
-        
+
         jPanel7.setVisible(true);
-      
+
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jPanel7.setVisible(false);
+        jTextPane1.setText("");
+        jPanel1.setVisible(true);
+
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        String plecare = jSpinner10.getValue().toString();
+        String destinatie = jSpinner11.getValue().toString();
+        if (destinatie.equals(plecare) == true) {
+            jTextPane1.setText("Statia de plecare coincide cu destinatia ");
+        } else {
+            System.out.println(plecare + " " + destinatie);
+           
+            int statie_plecare = 0;
+            int statie_destinatie = 0;
+            for (int i = 0; i < denumiri.size(); i++) {
+                if (denumiri.get(i).equals(plecare) == true) {
+                    statie_plecare = i + 2;
+                }
+                if (denumiri.get(i).equals(destinatie) == true) {
+                    statie_destinatie = i + 2;
+                }
+            }
+
+            System.out.println(plecare + " " + statie_plecare + " " + destinatie + " " + statie_destinatie);
+
+            // Process process = new ProcessBuilder("C:\\Users\\Madaluna\\Documents\\GitHub\\RATB\\dw.exe","7","20").start();
+            String aa = String.valueOf(statie_plecare);
+            System.out.println(aa);
+            String bb = String.valueOf(statie_destinatie);
+            String ff = "dw.exe " + aa + " " + bb;
+
+            String[] command
+                    = {
+                        "cmd",};
+            Process p;
+            try {
+                p = Runtime.getRuntime().exec(command);
+                new Thread(new SyncPipe(p.getErrorStream(), System.err)).start();
+                new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
+                PrintWriter stdin = new PrintWriter(p.getOutputStream());
+                stdin.println(" cd C:\\Users\\Madaluna\\Documents\\GitHub\\RATB ");
+                stdin.println("g++ -o dw dw.cpp ");
+                stdin.println(ff);
+
+                int returnCode;
+
+                stdin.close();
+                returnCode = p.waitFor();
+                System.out.println("Return code = " + returnCode);
+                //read from file data 
+                ArrayList<String> rute = new ArrayList<>();
+                String rutaAleasa;
+                BufferedReader br = new BufferedReader(new FileReader("date.txt"));
+
+                String line = null;
+                while ((line = br.readLine()) != null) {
+                    rute.add(line);
+                }
+                if (rute.size() != 0) {
+                    rutaAleasa = rute.get(0);
+                    br.close();
+                    for (String u : rute) {
+                        if (u.length() < rutaAleasa.length()) {
+                            rutaAleasa = u;
+                        }
+                    }
+                    jTextPane1.setText("Cea mai scurta ruta intre cele doua statii este : " + rutaAleasa);
+                } else {
+                    jTextPane1.setText("Nu s-a putut gasi ruta disponibila");
+                }
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) throws IOException {
-        
+
         s = new Socket("localhost", 8080);
         in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         out = new PrintWriter(s.getOutputStream(), true);
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Client().setVisible(true);
@@ -695,6 +942,7 @@ public class Client extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -702,12 +950,15 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -723,7 +974,10 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner10;
+    private javax.swing.JSpinner jSpinner11;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
@@ -733,5 +987,6 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner8;
     private javax.swing.JSpinner jSpinner9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
