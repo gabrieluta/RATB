@@ -121,6 +121,7 @@ public class BazaDeDate implements AutoCloseable {
     }
 
     public String verificare(int codCard, int nrAutobuz, int nrPersoane) throws SQLException {
+        String message = "";
         StringBuilder sb = new StringBuilder();
         sb.append("");
         sb.append(codCard);
@@ -161,14 +162,51 @@ public class BazaDeDate implements AutoCloseable {
                 sbm.append(minut);
                 String mString = sbm.toString();
 
-                String message = "cardul a fost validat in data de: ".concat(ziString).concat("/").concat(lunaString).concat("/").concat(anString).concat(" ").concat("la ora: ").concat(oraString).concat(":").concat(mString);
                 statement.close();
-                return message;
-            }
-        }
+                message = "cardul a fost validat in data de: ".concat(ziString).concat("/").concat(lunaString).concat("/").concat(anString).concat(" ").concat("la ora: ").concat(oraString).concat(":").concat(mString);
 
+            }
+
+        }
+        statement = connection.prepareStatement("select zi_end,luna_end,an_end from abonamente where (cod_card = ? and (numar_autobuz = 0 or numar_autobuz = ?));");
+        statement.setInt(1, codCard);
+        statement.setInt(2, nrAutobuz);
+        rs = statement.executeQuery();
+        while (rs.next()) {
+            int ziEnd = rs.getInt(1);
+            StringBuilder szi = new StringBuilder();
+            szi.append("");
+            szi.append(ziEnd);
+            String ziString = szi.toString();
+            int lunaEnd = rs.getInt(2);
+            StringBuilder sluna = new StringBuilder();
+            sluna.append("");
+            sluna.append(lunaEnd);
+            String lunaString = sluna.toString();
+            int anEnd = rs.getInt(3);
+            StringBuilder san = new StringBuilder();
+            san.append("");
+            san.append(anEnd);
+            String anString = san.toString();
+            statement.close();
+            rs.close();
+            message = message.concat(" abonament valabil pana la: ").concat(ziString).concat("/").concat(lunaString).concat("/").concat(anString);
+
+        }
+        statement = connection.prepareStatement("select bani from clienti where (cod_card = ?);");
+        statement.setInt(1, codCard);
+        rs = statement.executeQuery();
+        rs.next();
+        int bani = rs.getInt(1);
+        StringBuilder sbani = new StringBuilder();
+        sbani.append("");
+        sbani.append(bani);
+        String baniString = sbani.toString();
+        message = message.concat(" fonduri: ").concat(baniString);
         statement.close();
-        return "cardul nu a fost validat";
+        rs.close();
+        return message;
+
     }
 
     public String scadeBani(int codCard, int nrPersoane) throws SQLException {

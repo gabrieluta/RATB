@@ -905,11 +905,11 @@ public class Serverr extends javax.swing.JFrame {
 
                         try {
                             String message = bdd.verificare(cod, nrAutobuzInt, nrPersoaneInt);
-                            if (!message.equals("cardul nu a fost validat")) {
+                           if(!message.equals(""))
                                 out.println(message);
-                            } else {
-                                out.println("cardul nu a fost validat");
-                            }
+                           else
+                               out.println("cardul nu a fost validat");
+                            
                         } catch (SQLException ex) {
                             Logger.getLogger(Serverr.class.getName()).log(Level.SEVERE, null, ex);
                         }
