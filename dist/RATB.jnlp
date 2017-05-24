@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="RATB.jnlp">
+  <information>
+    <title>RATB</title>
+    <vendor>Madaluna</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="RATB.jar" size="41483" download="eager" />
+    <jar href="lib\sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
+  </resources>
+  <application-desc main-class="Mypackage.Client"  name="RATB" >
+  </application-desc>
+  <update check="always"/>
+</jnlp>
