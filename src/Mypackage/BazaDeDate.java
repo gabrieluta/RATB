@@ -171,6 +171,31 @@ public class BazaDeDate implements AutoCloseable {
         return "cardul nu a fost validat";
     }
 
+    public String scadeBani(int codCard, int nrPersoane) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement("select bani from clienti where cod_card = ?;");
+        statement.setInt(1, codCard);
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        double bani = rs.getDouble(1);
+        double suma = nrPersoane * 1.3;
+        if (bani >= suma) {
+            //daca are bani::::
+            statement = connection.prepareStatement("update clienti set bani = ? where cod_card = ?;");
+            statement.setDouble(1, bani - suma);
+            statement.setInt(2, codCard);
+            statement.executeUpdate();
+            statement.close();
+            rs.close();
+            return "tranzactie acceptata";
+        } else {
+            //daca nu are bani::::  
+            statement.close();
+            rs.close();
+            return "fonduri insuficiente";
+        }
+
+    }
+
     public String addValidare(int codCard, int nrAutobuz, int zi, int luna, int an, int ora, int minut, int nrPersoane) throws SQLException {
         System.out.println(codCard + " " + nrAutobuz + " " + zi + " " + luna + " " + an + " " + ora + " " + minut + " " + nrPersoane);
 
@@ -205,33 +230,87 @@ public class BazaDeDate implements AutoCloseable {
             int anEnd = resultSet.getInt(6);
             System.out.println("am gasit abonamentul : " + ziStart + " " + lunaStart + " " + anStart);
             if (ziStart <= zi && lunaStart <= luna && anStart <= an && ziEnd >= zi && anEnd >= an && lunaEnd >= luna) {
+                if (nrPersoane > 0) {
+                    String s = scadeBani(codCard, nrPersoane);
+                    if (s.equals("tranzactie acceptata")) {
+                        statement.close();
+                        String makeInsert = "INSERT INTO validari (cod_card,numar_autobuz,zi,luna,an,ora, minut,numar_persoane) VALUES (?,?,?,?,?,?,?,?);";
+                        if (connection == null || connection.isClosed()) {
+                            System.out.println("Conexiune pierduta");
+                        }
 
-                statement.close();
-                String makeInsert = "INSERT INTO validari (cod_card,numar_autobuz,zi,luna,an,ora, minut,numar_persoane) VALUES (?,?,?,?,?,?,?,?);";
-                if (connection == null || connection.isClosed()) {
-                    System.out.println("Conexiune pierduta");
+                        statement = connection.prepareStatement(makeInsert);
+
+                        statement.setInt(1, codCard);
+                        statement.setInt(2, nrAutobuz);
+                        statement.setInt(3, zi);
+                        statement.setInt(4, luna);
+                        statement.setInt(5, an);
+                        statement.setInt(6, ora);
+                        statement.setInt(7, minut);
+                        statement.setInt(8, nrPersoane);
+                        statement.executeUpdate();
+                        statement.close();
+                        return "card validat";
+                    } else {
+                        //fonduri insuficiente pentru numarul de persoane selectat
+                        statement.close();
+                        return "fonduri insuficiente pentru numarul de persoane selectat";
+                    }
+                } else {
+                    //valideaza doar pt el::
+                    statement.close();
+                    String makeInsert = "INSERT INTO validari (cod_card,numar_autobuz,zi,luna,an,ora, minut,numar_persoane) VALUES (?,?,?,?,?,?,?,?);";
+                    if (connection == null || connection.isClosed()) {
+                        System.out.println("Conexiune pierduta");
+                    }
+
+                    statement = connection.prepareStatement(makeInsert);
+
+                    statement.setInt(1, codCard);
+                    statement.setInt(2, nrAutobuz);
+                    statement.setInt(3, zi);
+                    statement.setInt(4, luna);
+                    statement.setInt(5, an);
+                    statement.setInt(6, ora);
+                    statement.setInt(7, minut);
+                    statement.setInt(8, nrPersoane);
+                    statement.executeUpdate();
+                    statement.close();
+                    return "card validat";
                 }
 
-                statement = connection.prepareStatement(makeInsert);
-
-                statement.setInt(1, codCard);
-                statement.setInt(2, nrAutobuz);
-                statement.setInt(3, zi);
-                statement.setInt(4, luna);
-                statement.setInt(5, an);
-                statement.setInt(6, ora);
-                statement.setInt(7, minut);
-                statement.setInt(8, nrPersoane);
-                statement.executeUpdate();
-                statement.close();
-                return "exista abonamentul";
-            } else {
-                statement.close();
-                return "abonament expirat";
             }
+
         }
-        statement.close();
-        return "niciun abonament pentru datele scrise";
+        //valideaza pt un nr de pers si pt el 
+        int suma = nrPersoane + 1;
+        String s = scadeBani(codCard, suma);
+        if (s.equals("tranzactie acceptata")) {
+            statement.close();
+            String makeInsert = "INSERT INTO validari (cod_card,numar_autobuz,zi,luna,an,ora, minut,numar_persoane) VALUES (?,?,?,?,?,?,?,?);";
+            if (connection == null || connection.isClosed()) {
+                System.out.println("Conexiune pierduta");
+            }
+
+            statement = connection.prepareStatement(makeInsert);
+
+            statement.setInt(1, codCard);
+            statement.setInt(2, nrAutobuz);
+            statement.setInt(3, zi);
+            statement.setInt(4, luna);
+            statement.setInt(5, an);
+            statement.setInt(6, ora);
+            statement.setInt(7, minut);
+            statement.setInt(8, suma);
+            statement.executeUpdate();
+            statement.close();
+            return "card validat";
+        } else {
+            //abonament inexistent si fonduri insuficiente
+            statement.close();
+            return "abonament inexistent si fonduri insuficiente";
+        }
 
     }
 

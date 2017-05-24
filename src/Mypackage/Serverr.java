@@ -848,9 +848,9 @@ public class Serverr extends javax.swing.JFrame {
                         try {
 
                             String mesaj = bdd.addValidare(cod, nrAutobuzInt, ziInt, lunaInt, anInt, oraInt, minutInt, nrPersoaneInt);
-                            while (!mesaj.equals("exista abonamentul")) {
-                                if ("abonament expirat".equals(mesaj)) {
-                                    out.println("abonament expirat");
+                            while (!mesaj.equals("card validat")) {
+                                if ("fonduri insuficiente pentru numarul de persoane selectat".equals(mesaj)) {
+                                    out.println("fonduri insuficiente pentru numarul de persoane selectat");
                                     nrAutobuz = in.readLine();
                                     zi = in.readLine();
                                     luna = in.readLine();
@@ -867,8 +867,8 @@ public class Serverr extends javax.swing.JFrame {
                                     minutInt = Integer.parseInt(minut);
                                     nrPersoaneInt = Integer.parseInt(nrPersoane);
 
-                                } else if ("niciun abonament pentru datele scrise".equals(mesaj)) {
-                                    out.println("niciun abonament pentru datele scrise");
+                                } else if ("abonament inexistent si fonduri insuficiente".equals(mesaj)) {
+                                    out.println("abonament inexistent si fonduri insuficiente");
                                     nrAutobuz = in.readLine();
                                     zi = in.readLine();
                                     luna = in.readLine();
@@ -889,7 +889,7 @@ public class Serverr extends javax.swing.JFrame {
 
                                 mesaj = bdd.addValidare(cod, nrAutobuzInt, ziInt, lunaInt, anInt, oraInt, minutInt, nrPersoaneInt);
                             }
-                            out.println("exista abonamentul");
+                            out.println("card validat");
                         } catch (SQLException ex) {
                             Logger.getLogger(Serverr.class.getName()).log(Level.SEVERE, null, ex);
                         }
