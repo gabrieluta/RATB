@@ -8,8 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="RATB.jar" size="41483" download="eager" />
+    <jar href="RATB.jar" size="41398" download="eager" />
     <jar href="lib\sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
+    <jar href="lib\swing-layout-1.0.4.jar" size="117420" download="eager" />
   </resources>
   <application-desc main-class="Mypackage.Client"  name="RATB" >
   </application-desc>

@@ -102,7 +102,7 @@ public class BazaDeDate implements AutoCloseable {
         rs.next();
         int cod = rs.getInt("cod_card");
 
-        if (cod >= codCard) {
+        if (codCard > 0 && cod >= codCard) {
             return true;
         } else {
             return false;
@@ -173,7 +173,7 @@ public class BazaDeDate implements AutoCloseable {
 
     public String addValidare(int codCard, int nrAutobuz, int zi, int luna, int an, int ora, int minut, int nrPersoane) throws SQLException {
         System.out.println(codCard + " " + nrAutobuz + " " + zi + " " + luna + " " + an + " " + ora + " " + minut + " " + nrPersoane);
-        
+
         PreparedStatement statement = connection.prepareStatement("select cod_card from validari where (cod_card = ?);");
         statement.setInt(1, codCard);
         ResultSet rs = statement.executeQuery();
@@ -190,7 +190,6 @@ public class BazaDeDate implements AutoCloseable {
         }
 
         // aici verific daca exista abonamentul
-        
         statement = connection.prepareStatement("select zi_start, luna_start, an_start,zi_end, luna_end, an_end from abonamente where (cod_card = ? and (numar_autobuz = ? or numar_autobuz = 0));");
         statement.setInt(1, codCard);
         statement.setInt(2, nrAutobuz);
@@ -204,7 +203,7 @@ public class BazaDeDate implements AutoCloseable {
             int ziEnd = resultSet.getInt(4);
             int lunaEnd = resultSet.getInt(5);
             int anEnd = resultSet.getInt(6);
-            System.out.println("am gasit abonamentul : "+ziStart+" "+lunaStart+" "+anStart);
+            System.out.println("am gasit abonamentul : " + ziStart + " " + lunaStart + " " + anStart);
             if (ziStart <= zi && lunaStart <= luna && anStart <= an && ziEnd >= zi && anEnd >= an && lunaEnd >= luna) {
 
                 statement.close();
