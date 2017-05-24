@@ -173,16 +173,15 @@ public class BazaDeDate implements AutoCloseable {
 
     public String addValidare(int codCard, int nrAutobuz, int zi, int luna, int an, int ora, int minut, int nrPersoane) throws SQLException {
         System.out.println(codCard + " " + nrAutobuz + " " + zi + " " + luna + " " + an + " " + ora + " " + minut + " " + nrPersoane);
-        StringBuilder sb = new StringBuilder();
-        sb.append("");
-        sb.append(codCard);
-        String codCardString = sb.toString();
-        PreparedStatement statement = connection.prepareStatement("select cod_card from validari where (cod_card = ".concat(codCardString).concat(");"));
+        
+        PreparedStatement statement = connection.prepareStatement("select cod_card from validari where (cod_card = ?);");
+        statement.setInt(1, codCard);
         ResultSet rs = statement.executeQuery();
 
         if (rs.next()) {
             statement.close();
-            statement = connection.prepareStatement("delete  from validari where (cod_card = ".concat(codCardString).concat(");"));
+            statement = connection.prepareStatement("delete  from validari where (cod_card = ?);");
+            statement.setInt(1, codCard);
             statement.executeUpdate();
             statement.close();
 
@@ -191,11 +190,10 @@ public class BazaDeDate implements AutoCloseable {
         }
 
         // aici verific daca exista abonamentul
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("");
-        sb2.append(nrAutobuz);
-        String nrAutobuzString = sb.toString();
-        statement = connection.prepareStatement("select zi_start, luna_start, an_start,zi_end, luna_end, an_end from abonamente where (cod_card = ".concat(codCardString).concat(" and (numar_autobuz = ").concat(nrAutobuzString).concat(" or numar_autobuz = 0)").concat(");"));
+        
+        statement = connection.prepareStatement("select zi_start, luna_start, an_start,zi_end, luna_end, an_end from abonamente where (cod_card = ? and (numar_autobuz = ? or numar_autobuz = 0));");
+        statement.setInt(1, codCard);
+        statement.setInt(2, nrAutobuz);
         ResultSet resultSet = statement.executeQuery();
 
         while (resultSet.next()) {
