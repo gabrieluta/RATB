@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="RATB.jar" size="48012" download="eager" />
+=======
+    <jar href="RATB.jar" size="42974" download="eager" />
+>>>>>>> origin/master
     <jar href="lib\sqlite-jdbc-3.16.1.jar" size="6161579" download="eager" />
     <jar href="lib\swing-layout-1.0.4.jar" size="117420" download="eager" />
   </resources>
